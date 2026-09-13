@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  @apply bg-paper text-ink font-body antialiased transition-colors duration-200;
+}
+
+html.dark body {
+  @apply bg-[#081220] text-slate-100;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+html.dark h1, html.dark h2, html.dark h3, html.dark h4 {
+  @apply text-white;
+}
+
+::selection {
+  background: #e8622c;
+  color: #fff;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #e8622c;
+  outline-offset: 2px;
+}
+
+.container-x {
+  @apply mx-auto w-full max-w-content px-5 sm:px-8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
